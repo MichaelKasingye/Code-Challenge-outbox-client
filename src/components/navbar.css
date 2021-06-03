@@ -1,3 +1,4 @@
+
 .navbar{
     /* background-color: #060b26; */
     position: fixed;
@@ -11,15 +12,25 @@
     width: 100%;
 }
 .navbar.active{
-    background: linear-gradient(90deg, rgb(66, 2, 194) 0%, rgb(0, 78, 194) 100%);
+    background: linear-gradient(90deg, rgb(255, 255, 255) 100%, rgb(223, 222, 222) 0%);
+    color: aliceblue;
+    transition: 1s;
+
     }
+
+.logo{
+    color: #060b26;
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+}
 .menu-bars {
     color: #060b26;
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
 }
-.nav-menu{
+.sidebar-menu{
     background-color: #060b26;
     width: 250px;
     height: 100vh;
@@ -31,11 +42,11 @@
     transition: 850ms;
 }
 
-.nav-menu.active{
+.sidebar-menu.active{
     left: 0;
     transition: 350ms;
 }
-.nav-text{
+.sidebar-text{
     display: flex;
     justify-content: flex-start;
     align-items: center;

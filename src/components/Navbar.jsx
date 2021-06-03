@@ -48,11 +48,24 @@ window.addEventListener('resize', showBurger);
             <div className={navbar ? 'navbar active' : 'navbar'}>
                 {burger? <Link to="#" className='menu-bars'>
                     <FaBars onClick={showSidebar}/>
-                </Link>:""}
+                </Link>:<Link to="/" className="logo">
+                   <h3>Ewaka</h3>
+               </Link>}
+               <input type="text" />
+               {burger?"":<div className="nav-menu">
+               <Link to="/">locations</Link>
+               <Link to="/"> Rates</Link>
+               <Link to="/">Login</Link>
+               </div>}
+               
+               <Link to="/">Cart</Link>
+               {burger?<Link to="/" className="logo">
+                   <h3>Ewaka</h3>
+               </Link>:""}
                
             </div>
-            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                <ul className='nav-menu-items' onClick={showSidebar}>
+            <nav className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>
+                <ul className='sidebar-menu-items' onClick={showSidebar}>
                     <li className="navbar-toggle">
                         <Link to="#" className='menu-bars'>
                             <AiOutlineClose style={{color:'white'}} onClick={showSidebar}/>
