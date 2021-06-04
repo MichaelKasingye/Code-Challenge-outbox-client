@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {FaBars} from "react-icons/fa";
+import {FaSearch} from "react-icons/fa";
+import {BiCartAlt} from "react-icons/bi";
 import {AiOutlineClose} from "react-icons/ai";
 import {Link} from 'react-router-dom';
 import {SidebarData} from './Sidebar';
@@ -15,10 +17,8 @@ function Navbar() {
     const showBurger = () => {
         if(window.innerWidth <= 500){
             setBurger(true);
-            // console.log("less");
         }else{
             setBurger(false);
-            // console.log("more");
         }
     }
 
@@ -41,7 +41,7 @@ window.addEventListener('resize', showBurger);
     return (
         <>
         <IconContext.Provider
-         value={{size:'2rem'}}
+         value={{size:'1.5rem'}}
         //  value={{color:'white'}}
 
         >
@@ -51,14 +51,23 @@ window.addEventListener('resize', showBurger);
                 </Link>:<Link to="/" className="logo">
                    <h3>Ewaka</h3>
                </Link>}
-               <input type="text" />
+
+               <form action="" className="nav-form">
+                <div className="nav-input">
+               <input className="nav-inputer" type="text" />
+                <FaSearch className="nav-search"/>
+                </div>
+               </form>
                {burger?"":<div className="nav-menu">
                <Link to="/">locations</Link>
                <Link to="/"> Rates</Link>
                <Link to="/">Login</Link>
                </div>}
                
-               <Link to="/">Cart</Link>
+               <Link to="/" className="nav-cart">
+                   <BiCartAlt />
+                   <span className="cart-number">1</span>
+               </Link>
                {burger?<Link to="/" className="logo">
                    <h3>Ewaka</h3>
                </Link>:""}
