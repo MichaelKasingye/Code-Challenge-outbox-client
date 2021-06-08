@@ -3,8 +3,9 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
-import Product from './components/pages/Product';
-import Team from './components/pages/Team';
+import Results from './components/pages/Results';
+import Squareroot from './components/pages/Squareroot';
+// import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
 
@@ -15,8 +16,8 @@ function App() {
       <Navbar/>
       <Switch>
         <Route path='/' exact component={Home}/>
-        <Route path='/teams' component={Team}/>
-        <Route path='/products' component={Product}/>
+        <Route path='/squareroot' component={Squareroot}/>
+        <Route path='/results' component={Results}/>
       </Switch>
     </Router>
     </div>

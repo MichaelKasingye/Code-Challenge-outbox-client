@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import {FaBars} from "react-icons/fa";
-import {FaSearch} from "react-icons/fa";
 import {BiCartAlt} from "react-icons/bi";
 import {AiOutlineClose} from "react-icons/ai";
 import {Link} from 'react-router-dom';
@@ -49,35 +48,29 @@ window.addEventListener('resize', showBurger);
                 {burger? <Link to="#" className='menu-bars'>
                     <FaBars onClick={showSidebar}/>
                 </Link>:<Link to="/" className="logo">
-                   <h3>Ewaka</h3>
+                   <h3>CodeChallenge</h3>
                </Link>}
 
-               <form action="" className="nav-form">
-                <div className="nav-input">
-               <input className="nav-inputer" type="text" />
-                <FaSearch className="nav-search"/>
-                </div>
-               </form>
+               
                {burger?"":<div className="nav-menu">
-               <Link to="/">locations</Link>
-               <Link to="/"> Rates</Link>
+               <Link to="/">Home</Link>
+               <Link to="/">Factorial</Link>
+               <Link to="/squareroot"> Square root</Link>
+               <Link to="/"> Multiples</Link>
+               <Link to="/results"> Results</Link>
                <Link to="/">Login</Link>
                </div>}
                
-               <Link to="/" className="nav-cart">
-                   <BiCartAlt />
-                   <span className="cart-number">1</span>
-               </Link>
                {burger?<Link to="/" className="logo">
-                   <h3>Ewaka</h3>
+                   <h3>CodeChallenge</h3>
                </Link>:""}
                
             </div>
-            <nav className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>
+            <div className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>
                 <ul className='sidebar-menu-items' onClick={showSidebar}>
                     <li className="navbar-toggle">
                         <Link to="#" className='menu-bars'>
-                            <AiOutlineClose style={{color:'white'}} onClick={showSidebar}/>
+                            <AiOutlineClose style={{color:'black'}} onClick={showSidebar}/>
                         </Link>
                     </li>
                     {
@@ -93,7 +86,7 @@ window.addEventListener('resize', showBurger);
                         })
                     }
                 </ul>
-            </nav>
+            </div>
             </IconContext.Provider>
         </>
     )
