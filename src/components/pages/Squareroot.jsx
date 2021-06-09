@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './squareroot.css';
 import axios from "axios";
+import Calculate from "../Calculate"
+
 function Squareroot() {
     const [name, setName] = useState("");
     const [question, setQuestion] = useState("");
@@ -56,9 +58,11 @@ useEffect(() => {
             </form>
 
             <div className="page-results">
-                <p><span>Calculation Type:</span><span>{name}</span></p>
-                <p><span>Asked number:</span><span>{question}</span></p>
-                <p><span>Answer:</span><span>{answer}</span></p>
+                <Calculate
+                name={name}
+                question={question}
+                answer={answer}
+                />
             </div>
 
         </div>
