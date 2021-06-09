@@ -43,9 +43,11 @@ useEffect(() => {
 
 
     return (
-        <div>
+        <div className="Squareroot-section">
             <div className="Squareroot">.</div>
-            <div className="title">Team</div>
+            <div className="title">
+                <h1>Square Root</h1>
+            </div>
 
             <form onSubmit={submitHandler}>
             <input 
@@ -54,7 +56,7 @@ useEffect(() => {
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             />
-            <button type="submit">Reset</button>
+        { !question?"": <button type="submit">Reset</button>}
             </form>
 
             <div className="page-results">
