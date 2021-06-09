@@ -18,10 +18,12 @@ function Results() {
     }, [])
         const data = roots;
     return (
-        <div>
+        <div className="Results">
             {console.log(data)}
             <div>.</div>
-            <div className="title">Results</div>
+            <div className="title">
+                <h1>Results</h1> 
+                </div>
                 <table>
                 <tr>
                     <th>Type of Calculation</th>
