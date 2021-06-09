@@ -22,7 +22,26 @@ function Results() {
             {console.log(data)}
             <div>.</div>
             <div className="title">Results</div>
-            {typeof data != "undefined"?
+                <table>
+                <tr>
+                    <th>Type of Calculation</th>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th>Date</th>
+                </tr>
+                {typeof data != "undefined"?
+            ([...data].map(info => (
+                    <tr key={info._id}>
+                        <td>{info.name}</td>
+                        <td>{info.question}</td>
+                        <td>{info.answer}</td>
+                        <td>{info.date}</td>
+                        </tr>
+                ))):"Undefined"
+            }
+               
+                </table>
+            {/* {typeof data != "undefined"?
             ([...data].map(info => (
                     <div key={info._id}>
                         <p>{info.name}</p>
@@ -33,7 +52,7 @@ function Results() {
                         </div>
                 ))):"Undefined"
             
-            }
+            } */}
             {/* {[data].map(info => (
                     <p key={info._id}>
                         {info.name}
