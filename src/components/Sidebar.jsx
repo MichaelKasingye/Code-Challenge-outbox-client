@@ -23,12 +23,6 @@ export const SidebarData = [
         cName: 'sidebar-text'
     },
     {
-        title: 'Multiples',
-        path: '/multiples',
-        icon: <FaIcons.FaCartPlus className="icon"/>,
-        cName: 'sidebar-text'
-    },
-    {
         title: 'Results',
         path: '/results',
         icon: <FaIcons.FaCartPlus className="icon"/>,
@@ -36,7 +30,13 @@ export const SidebarData = [
     },
     {
         title: 'Login',
-        path: '/teams',
+        path: '/login',
+        icon: <IoIcons.IoMdPeople className="icon"/>,
+        cName: 'sidebar-text'
+    },
+    {
+        title: 'Sign Up',
+        path: '/signUp',
         icon: <IoIcons.IoMdPeople className="icon"/>,
         cName: 'sidebar-text'
     }
