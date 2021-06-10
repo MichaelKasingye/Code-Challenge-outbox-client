@@ -31,17 +31,17 @@ function Navbar() {
     if (signedOut) {
       history.push("/login");
     } else {
-      history.push("/");
+      history.push("/login");
     }
   }
-  // const out = theUserSignOut();
+  const out = " ";
   useEffect(() => {
     showBurger();
     theUserSignOut();
     return () => {
       // Unsubscribe();
     };
-  }, []);
+  }, [out]);
 
   window.addEventListener("resize", showBurger);
 

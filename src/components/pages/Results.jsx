@@ -46,6 +46,9 @@ function Results() {
           )}
         </tbody>
       </table>
+      {!data?<h1>Loading...</h1>:""}
+      
+      
     </div>
   );
 }

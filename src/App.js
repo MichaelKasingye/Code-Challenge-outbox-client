@@ -34,7 +34,7 @@ function App() {
     return () => {
       // Unsubscribe
     };
-  }, [none]);
+  }, []);
   console.log("User is >>>>", user);
   return (
     <div className="App">
