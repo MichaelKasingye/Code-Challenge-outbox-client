@@ -1,15 +1,14 @@
-.calculate{
-    width: 100%;
-    height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-padding: 10px;
+.calculate {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
 }
 
-.calculate p{
-    /* border: 2px solid red; */
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.calculate p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
