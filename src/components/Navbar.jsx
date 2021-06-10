@@ -31,7 +31,7 @@ function Navbar() {
     if (signedOut) {
       history.push("/login");
     } else {
-      history.push("/");
+      history.push("/login");
     }
   }
   const out = " ";
