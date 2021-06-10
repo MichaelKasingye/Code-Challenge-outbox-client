@@ -27,7 +27,7 @@ function Factorial() {
 
         function factorial(question){
             let answer = 1;
-            if (question == 0 || question == 1){
+            if (question === 0 || question === 1){
               return answer;
             }else{
               for(var i = question; i >= 1; i--){
