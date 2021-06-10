@@ -46,12 +46,13 @@ function Squareroot() {
       <form onSubmit={submitHandler}>
         <input
           type="number"
-          placeholder="number to calculate"
+          placeholder="Enter number to calculate"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
         />
         {!question ? "" : <button type="submit">Reset</button>}
       </form>
+      <h3>Press the reset button to restart the calculation</h3>
 
       <div className="page-results">
         <Calculate name={name} question={question} answer={answer} />

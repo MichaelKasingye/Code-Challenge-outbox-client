@@ -19,11 +19,23 @@ function Factorial() {
     useEffect(() => {
 
         setName(calculationType);
-        function factorial(question) {
-            if (question < 0) return;
-            if (question < 2) return 1;
-            return question * factorial(question - 1);
-        }
+        // function factorial(question) {
+        //     if (question < 0) return;
+        //     if (question < 2) return 1;
+        //     return question * factorial(question - 1);
+        // }
+
+        function factorial(question){
+            let answer = 1;
+            if (question == 0 || question == 1){
+              return answer;
+            }else{
+              for(var i = question; i >= 1; i--){
+                answer = answer * i;
+              }
+              return answer;
+            }  
+          }
         setAnswer(factorial(question));
 
 
@@ -53,13 +65,13 @@ function Factorial() {
             <form onSubmit={submitHandler}>
                 <input
                     type="number"
-                    placeholder="number to calculate"
+                    placeholder="Enter number to calculate"
                     value={question}
                     onChange={(e) => setQuestion(e.target.value)}
                 />
                 {!question ? "" : <button type="submit">Reset</button>}
             </form>
-
+                <h3>Press the reset button to restart the calculation</h3>
             <div className="page-results">
                 <Calculate
                     name={name}
