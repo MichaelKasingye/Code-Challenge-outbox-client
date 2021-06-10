@@ -34,14 +34,14 @@ function Navbar() {
       history.push("/");
     }
   }
-  // const out = theUserSignOut();
+  const out = " ";
   useEffect(() => {
     showBurger();
     theUserSignOut();
     return () => {
       // Unsubscribe();
     };
-  }, []);
+  }, [out]);
 
   window.addEventListener("resize", showBurger);
 
