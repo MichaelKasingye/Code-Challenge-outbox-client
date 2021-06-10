@@ -1,74 +1,64 @@
-import React, { useEffect, useState } from 'react'
-import './squareroot.css';
+import React, { useEffect, useState } from "react";
+import "./squareroot.css";
 import axios from "axios";
-import Calculate from "../Calculate"
+import Calculate from "../Calculate";
 
 function Squareroot() {
-    const [name, setName] = useState("");
-    const [question, setQuestion] = useState("");
-    const [answer, setAnswer] = useState("");
+  const [name, setName] = useState("");
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
 
-    
-const data = {
+  const data = {
     name: name,
     question: question,
-    answer: answer
-}
-const calculationType = "Square Root";
+    answer: answer,
+  };
+  const calculationType = "Square Root";
 
-
-useEffect(() => {
-    
+  useEffect(() => {
     setName(calculationType);
-    var squareRoot =()=> Math.sqrt(question);
+    var squareRoot = () => Math.sqrt(question);
     setAnswer(squareRoot);
+  }, [question]);
 
-    
-}, [question])
+  function submitHandler(e) {
+    e.preventDefault();
 
-    function submitHandler (e) {
-        e.preventDefault();
+    console.log(data);
+    axios
+      .post("https://codechallengeserver.herokuapp.com/api/v1/numbers", data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setQuestion("");
+  }
 
-        // squareRoot();
-        console.log(data);
-         axios.post('http://localhost:5000/api/items/', data)
-        .then(response =>{
-            console.log(response)
-        })
-        .catch(error =>{
-            console.log(error);
-        })
-        setQuestion("");
-    }
+  return (
+    <div className="main-section">
+      <div className="main">.</div>
+      <div className="title">
+        <h1>Square Root</h1>
+      </div>
 
+      <form onSubmit={submitHandler}>
+        <input
+          type="number"
+          placeholder="Enter number to calculate"
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+        />
+        {!question ? "" : <button type="submit">Reset</button>}
+      </form>
+      <h3>Press the reset button to restart the calculation</h3>
 
-    return (
-        <div className="Squareroot-section">
-            <div className="Squareroot">.</div>
-            <div className="title">
-                <h1>Square Root</h1>
-            </div>
-
-            <form onSubmit={submitHandler}>
-            <input 
-            type="number"
-            placeholder="number to calculate"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            />
-        { !question?"": <button type="submit">Reset</button>}
-            </form>
-
-            <div className="page-results">
-                <Calculate
-                name={name}
-                question={question}
-                answer={answer}
-                />
-            </div>
-
-        </div>
-    )
+      <div className="page-results">
+        <Calculate name={name} question={question} answer={answer} />
+      </div>
+    </div>
+  );
 }
 
-export default Squareroot
+export default Squareroot;
