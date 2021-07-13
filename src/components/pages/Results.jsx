@@ -28,7 +28,6 @@ function Results() {
             <th>Type of Calculation</th>
             <th>Question</th>
             <th>Answer</th>
-            <th>Date</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +37,6 @@ function Results() {
                 <td>{info.name}</td>
                 <td>{info.question}</td>
                 <td>{info.answer}</td>
-                <td>{info.date}</td>
               </tr>
             ))
           ) : (

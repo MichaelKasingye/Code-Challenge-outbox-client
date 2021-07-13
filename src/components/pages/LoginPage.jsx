@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../Firebase/firebase";
+import { useStateValue } from "../ContextAPI/StateProvider";
+
 import "./loginPage.css";
 function LoginPage() {
+  const [ {user},dispatch] = useStateValue();
+
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,6 +16,10 @@ function LoginPage() {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
+        dispatch({
+          type: "SET_USER",
+          user: email,
+        });
         history.push("/");
       })
       .catch((e) => {
@@ -24,6 +32,10 @@ function LoginPage() {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
+        dispatch({
+          type: "SET_USER",
+          user: email,
+        })
         history.push("/");
       })
       .catch((e) => {

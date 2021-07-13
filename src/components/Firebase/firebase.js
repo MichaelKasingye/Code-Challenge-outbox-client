@@ -2,13 +2,13 @@ import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
    
-    apiKey: "AIzaSyAAsPudVmT4uAVmJ3QTaBOa9nCw9HvyBIU",
-    authDomain: "code-challenge-efd04.firebaseapp.com",
-    projectId: "code-challenge-efd04",
-    storageBucket: "code-challenge-efd04.appspot.com",
-    messagingSenderId: "86986998349",
-    appId: "1:86986998349:web:8f1a916107e1d56d729204",
-    measurementId: "G-62F3TKB4BC"
+    apiKey: "AIzaSyCMuBipTWD9L8R-lU3n_kv8n3VAFySD3gE",
+    authDomain: "ecommerce-3b623.firebaseapp.com",
+    projectId: "ecommerce-3b623",
+    storageBucket: "ecommerce-3b623.appspot.com",
+    messagingSenderId: "88818567063",
+    appId: "1:88818567063:web:1723619ef0db88b494e6d2",
+    measurementId: "G-WSEVVWLDES"
      
 });
 

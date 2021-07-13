@@ -16,6 +16,7 @@ export const SidebarData = [
         icon: <AiIcons.AiFillHome className="icon"/>,
         cName: 'sidebar-text'
     },
+    
     {
         title: 'Square root',
         path: '/squareroot',
@@ -35,8 +36,8 @@ export const SidebarData = [
         cName: 'sidebar-text'
     },
     {
-        title: 'Sign Up',
-        path: '/signUp',
+        title: 'Sign out',
+        path: '/login',
         icon: <IoIcons.IoMdPeople className="icon"/>,
         cName: 'sidebar-text'
     }
