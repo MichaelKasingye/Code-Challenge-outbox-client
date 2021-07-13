@@ -13,7 +13,7 @@ function Navbar() {
   const [sidebar, setSidebar] = useState(false);
   const [navbar, setNavbar] = useState(false);
   const [burger, setBurger] = useState(false);
-  const [{ user }] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
   const history = useHistory();
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -30,6 +30,10 @@ function Navbar() {
     const signedOut = auth.signOut();
     if (signedOut) {
       history.push("/login");
+      dispatch({
+                type: "SET_USER",
+                user: null,
+              });
     } else {
       history.push("/login");
     }
@@ -55,7 +59,7 @@ function Navbar() {
 
   window.addEventListener("scroll", changeBackground);
 
-  function login() {
+  function signout() {
     if (user) {
       auth.signOut();
     }
@@ -81,7 +85,6 @@ function Navbar() {
             ""
           ) : (
             <div className="nav-menu">
-              <Link to="/">Home</Link>
               <Link to="/factorial">Factorial</Link>
               <Link to="/squareroot"> Square root</Link>
               <Link to="/results"> Results</Link>
@@ -89,7 +92,7 @@ function Navbar() {
               {!user ? (
                 <Link to="/login">Sign Up</Link>
               ) : (
-                <Link to="/login" onClick={login}>
+                <Link to="/login" onClick={theUserSignOut}>
                   Sign Out
                 </Link>
               )}

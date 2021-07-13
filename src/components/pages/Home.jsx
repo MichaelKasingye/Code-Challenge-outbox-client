@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../Firebase/firebase";
+import { useStateValue } from "../ContextAPI/StateProvider";
 
 function Home() {
+  const [{ user }] = useStateValue();
+
   const signedOut = auth.signOut();
   return (
     <div className="home">
@@ -16,7 +19,7 @@ function Home() {
         </button>
       ) : (
         <div>
-          <h4>Wellcome</h4>
+          <h4>Wellcome </h4> <h6>{user}</h6>
           <p style={{ fontSize: "1.5rem" }}>
             View more of the site from the links above
           </p>
